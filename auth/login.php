@@ -74,7 +74,7 @@ body{
     overflow:hidden;
 }
 
-/* BACKGROUND EFFECT */
+
 
 body::before{
     content:'';
@@ -100,7 +100,7 @@ body::after{
     filter:blur(90px);
 }
 
-/* LOGIN CARD */
+/* */
 
 .login-card{
     position:relative;
