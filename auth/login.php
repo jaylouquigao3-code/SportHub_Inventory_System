@@ -200,7 +200,7 @@ body::after{
     z-index:100;
 }
 
-/* BUTTON */
+/* LOGIN BUTTON */
 
 .login-btn{
     width:100%;
