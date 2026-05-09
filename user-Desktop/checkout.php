@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../config/db.php';
-
+  
 if(isset($_POST['buy'])){
     $equipment_id = $_POST['equipment_id'];
     $quantity = $_POST['quantity'];
