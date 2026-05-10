@@ -13,20 +13,20 @@ SELECT COUNT(DISTINCT category)
 FROM equipments
 ")->fetchColumn();
 
-/* TOTAL ORDERS */
+/*TOTAL ORDERS*/
 
 $totalOrders = $conn->query("
 SELECT COUNT(*) FROM orders
 ")->fetchColumn();
 
-/* TOTAL CUSTOMERS */
-/* FETCH FROM customers TABLE */
+/*TOTAL CUSTOMERS*/
+/*FETCH FROM customers TABLE*/
 
 $totalCustomers = $conn->query("
 SELECT COUNT(*) FROM customers
 ")->fetchColumn();
 
-/* TOTAL INCOME */
+/*TOTAL INCOME*/
 
 $totalIncome = $conn->query("
 SELECT IFNULL(SUM(total_amount),0)
@@ -46,16 +46,16 @@ WHERE payment_status = 'Paid'
 
 <title>Admin Dashboard</title>
 
-<!-- Bootstrap -->
+<!--Bootstrap-->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
+<!--Bootstrap Icons-->
 
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Google Font -->
+<!--Google Font-->
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
