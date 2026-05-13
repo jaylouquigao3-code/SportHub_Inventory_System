@@ -307,17 +307,17 @@ body{
 /* RESPONSIVE */
 
 @media(max-width:991px){
-
+    /*sidebar*/
     .sidebar{
         width:100%;
         height:auto;
         position:relative;
     }
-
+    /*mainContent*/
     .main-content{
         margin-left:0;
     }
-
+    /*topbar*/
     .topbar{
         flex-direction:column;
         align-items:flex-start;
