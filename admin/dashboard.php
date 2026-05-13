@@ -384,11 +384,11 @@ body{
 
 </div>
 
-<!-- MAIN -->
+<!--MAIN-->
 
 <div class="main-content">
 
-    <!-- TOPBAR -->
+    <!--TOPBAR-->
 
     <div class="topbar">
 
@@ -408,7 +408,7 @@ body{
 
     </div>
 
-    <!-- WELCOME -->
+    <!--WELCOME-->
 
     <div class="welcome-box">
 
@@ -422,11 +422,11 @@ body{
 
     </div>
 
-    <!-- DASHBOARD CARDS -->
+    <!--DASHBOARD CARDS-->
 
     <div class="row g-4">
 
-        <!-- TOTAL EQUIPMENTS -->
+        <!--TOTAL EQUIPMENTS-->
 
         <div class="col-xl-3 col-md-6">
 
@@ -456,7 +456,7 @@ body{
 
         </div>
 
-        <!-- TOTAL CATEGORIES -->
+        <!--TOTAL CATEGORIES-->
 
         <div class="col-xl-3 col-md-6">
 
@@ -486,7 +486,7 @@ body{
 
         </div>
 
-        <!-- TOTAL ORDERS -->
+        <!--TOTAL ORDERS-->
 
         <div class="col-xl-3 col-md-6">
 
