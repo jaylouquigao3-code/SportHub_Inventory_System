@@ -532,11 +532,11 @@ body{
 
 </div>
 
-<!-- MAIN -->
+<!--MAIN-->
 
 <div class="main-content">
 
-    <!-- TOPBAR -->
+    <!--TOPBAR-->
 
     <div class="topbar">
 
@@ -552,15 +552,15 @@ body{
 
     </div>
 
-    <!-- CARD -->
+    <!--CARD-->
 
     <div class="inventory-card">
 
-        <!-- HEADER -->
+        <!--HEADER-->
 
         <div class="inventory-header">
 
-            <!-- SEARCH -->
+            <!--SEARCH-->
 
             <div class="search-box">
 
@@ -572,7 +572,7 @@ body{
 
             </div>
 
-            <!-- ADD BUTTON -->
+            <!--ADD BUTTON-->
 
             <button class="add-btn"
                     data-bs-toggle="modal"
@@ -586,7 +586,7 @@ body{
 
         </div>
 
-        <!-- TABLE -->
+        <!--TABLE-->
 
         <div class="table-wrapper">
 
@@ -626,7 +626,7 @@ body{
 
                     <tr>
 
-                        <!-- ID -->
+                        <!--ID-->
 
                         <td>
 
@@ -634,14 +634,13 @@ body{
 
                         </td>
 
-                        <!-- PRODUCT -->
+                        <!--PRODUCT-->
 
                         <td>
 
                             <div class="product-info">
 
-                                <img src="../uploads/<?= $row['image'] ?>"
-                                     class="product-img">
+                                <img src="../uploads/<?= $row['image'] ?>" class="product-img">
 
                                 <div>
 
@@ -663,7 +662,7 @@ body{
 
                         </td>
 
-                        <!-- PRICE -->
+                        <!--PRICE-->
 
                         <td>
 
@@ -675,7 +674,7 @@ body{
 
                         </td>
 
-                        <!-- STOCK -->
+                        <!--STOCK-->
 
                         <td>
 
