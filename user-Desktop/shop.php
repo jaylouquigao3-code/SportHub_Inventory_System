@@ -1,6 +1,7 @@
 <?php
 include '../config/db.php';
 
+
 $products = $conn->query("SELECT * FROM equipments");
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ $products = $conn->query("SELECT * FROM equipments");
 <h2>Sports Equipment Shop</h2>
 
 <div class="row">
-<?php while($row = $products->fetch()) { ?>
+<?php while($row = $products->fetch()){?>
 <div class="col-md-4">
 <div class="card p-3 mb-3">
 <h4><?= $row['equipment_name'] ?></h4>
@@ -25,11 +26,12 @@ $products = $conn->query("SELECT * FROM equipments");
 <input type="hidden" name="equipment_id" value="<?= $row['id'] ?>">
 <input type="number" name="quantity" class="form-control mb-2" min="1" required>
 
+
 <button class="btn btn-success" name="buy">Buy Now</button>
 </form>
 </div>
 </div>
-<?php } ?>
+<?php }?>
 </div>
 </body>
 </html>
