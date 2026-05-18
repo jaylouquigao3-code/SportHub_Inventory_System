@@ -2,7 +2,7 @@
 include '../auth/auth_check.php';
 include '../config/db.php';
 
-/* ADD EQUIPMENT */
+/*ADD EQUIPMENT*/
 
 if(isset($_POST['add'])){
 
@@ -11,26 +11,26 @@ if(isset($_POST['add'])){
     $price = $_POST['price'];
     $stock = $_POST['stock'];
 
-    // IMAGE
+    //IMAGE
 
     $imageName = $_FILES['image']['name'];
     $tmpName = $_FILES['image']['tmp_name'];
 
     $uploadDir = "../uploads/";
 
-    // CREATE FOLDER
+    //CREATE FOLDER
 
     if(!is_dir($uploadDir)){
         mkdir($uploadDir, 0777, true);
     }
 
-    // UNIQUE IMAGE NAME
+    //UNIQUE IMAGE NAME
 
     $newImageName = time() . "_" . $imageName;
 
     move_uploaded_file($tmpName, $uploadDir . $newImageName);
 
-    // INSERT
+    //INSERT
 
     $stmt = $conn->prepare("
         INSERT INTO equipments
@@ -50,9 +50,10 @@ if(isset($_POST['add'])){
     exit();
 }
 
-/* FETCH EQUIPMENTS */
+/*FETCH EQUIPMENTS*/
 $equipments = $conn->query("SELECT * FROM equipments");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,14 +65,14 @@ $equipments = $conn->query("SELECT * FROM equipments");
 
 <title>Inventory Management</title>
 
-<!-- Bootstrap -->
+<!--Bootstrap-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
+<!--Bootstrap Icons-->
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Google Font -->
+<!--Google Font-->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -146,14 +147,14 @@ body{
     transform:translateX(4px);
 }
 
-/* MAIN */
+/*MAIN*/
 
 .main-content{
     margin-left:260px;
     padding:30px;
 }
 
-/* TOPBAR */
+/*TOPBAR*/
 
 .topbar{
     display:flex;
@@ -232,7 +233,7 @@ body{
     color:#94a3b8;
 }
 
-/* ADD BUTTON */
+/*ADD BUTTON*/
 
 .add-btn{
     border:none;
@@ -298,7 +299,7 @@ body{
     border-bottom-right-radius:18px;
 }
 
-/* PRODUCT */
+/*PRODUCT*/
 
 .product-info{
     display:flex;
@@ -567,8 +568,8 @@ body{
                 <i class="bi bi-search"></i>
 
                 <input type="text"
-                       id="searchInput"
-                       placeholder="Search equipment, category...">
+                    id="searchInput"
+                    placeholder="Search equipment, category...">
 
             </div>
 
@@ -704,8 +705,7 @@ body{
 
                                 </a>
 
-                                <a href="delete_equipment.php?id=<?= $row['id'] ?>"
-                                   onclick="return confirm('Delete this equipment?')">
+                                <a href="delete_equipment.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this equipment?')">
 
                                     <button class="action-btn delete-btn">
 
@@ -736,8 +736,8 @@ body{
 <!-- MODAL -->
 
 <div class="modal fade"
-     id="addModal"
-     tabindex="-1">
+    id="addModal"
+    tabindex="-1">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -763,7 +763,7 @@ body{
             <!-- FORM -->
 
             <form method="POST"
-                  enctype="multipart/form-data">
+                enctype="multipart/form-data">
 
                 <div class="modal-body">
 
@@ -772,9 +772,9 @@ body{
                         <label class="mb-2">Equipment Name</label>
 
                         <input type="text"
-                               name="equipment_name"
-                               class="form-control"
-                               required>
+                            name="equipment_name"
+                            class="form-control"
+                            required>
 
                     </div>
 
@@ -783,9 +783,9 @@ body{
                         <label class="mb-2">Category</label>
 
                         <input type="text"
-                               name="category"
-                               class="form-control"
-                               required>
+                            name="category"
+                            class="form-control"
+                            required>
 
                     </div>
 
@@ -794,10 +794,10 @@ body{
                         <label class="mb-2">Price</label>
 
                         <input type="number"
-                               step="0.01"
-                               name="price"
-                               class="form-control"
-                               required>
+                            step="0.01"
+                            name="price"
+                            class="form-control"
+                            required>
 
                     </div>
 
@@ -806,9 +806,9 @@ body{
                         <label class="mb-2">Stock</label>
 
                         <input type="number"
-                               name="stock"
-                               class="form-control"
-                               required>
+                            name="stock"
+                            class="form-control"
+                            required>
 
                     </div>
 
@@ -833,11 +833,11 @@ body{
                             </p>
 
                             <input type="file"
-                                   name="image"
-                                   id="imageInput"
-                                   accept="image/*"
-                                   hidden
-                                   required>
+                                name="image"
+                                id="imageInput"
+                                accept="image/*"
+                                hidden
+                                required>
 
                         </label>
 
