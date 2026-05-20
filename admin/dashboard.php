@@ -412,7 +412,7 @@ body{
 
     <div class="welcome-box">
 
-        <h2>Welcome Back, Admin 👋</h2>
+        <h2>Welcome Back, Kijaw 👋</h2>
 
         <p>
 

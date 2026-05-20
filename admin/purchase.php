@@ -3,7 +3,7 @@ include '../auth/auth_check.php';
 include '../config/db.php';
 
 /* =========================================
-   UPDATE PAYMENT STATUS
+UPDATE PAYMENT STATUS
 ========================================= */
 
 if(isset($_POST['update_status'])){
@@ -11,7 +11,7 @@ if(isset($_POST['update_status'])){
     $order_id = $_POST['order_id'];
     $payment_status = $_POST['payment_status'];
 
-    /* GET ORDER */
+    /*GET ORDER*/
 
     $getOrder = $conn->prepare("
     SELECT
@@ -37,7 +37,7 @@ if(isset($_POST['update_status'])){
         $quantity = $order['quantity'];
         $equipment_id = $order['equipment_id'];
 
-        /* GET EQUIPMENT */
+        /*GET EQUIPMENT*/
 
         $equipment = $conn->prepare("
         SELECT *
@@ -53,7 +53,7 @@ if(isset($_POST['update_status'])){
 
             $stock = $item['stock'];
 
-            /* PENDING TO PAID */
+            /*PENDING TO PAID*/
 
             if($old_status == "Pending"
             && $payment_status == "Paid"){
@@ -75,7 +75,7 @@ if(isset($_POST['update_status'])){
                 }
             }
 
-            /* PAID TO PENDING */
+            /*PAID TO PENDING*/
 
             if($old_status == "Paid"
             && $payment_status == "Pending"){
@@ -94,7 +94,7 @@ if(isset($_POST['update_status'])){
                 ]);
             }
 
-            /* UPDATE STATUS */
+            /*UPDATE STATUS*/
 
             $update = $conn->prepare("
             UPDATE orders
@@ -114,7 +114,7 @@ if(isset($_POST['update_status'])){
 }
 
 /* =========================================
-   ADD PURCHASE
+ADD PURCHASE
 ========================================= */
 
 if(isset($_POST['add_purchase'])){
@@ -141,17 +141,17 @@ if(isset($_POST['add_purchase'])){
         $price = $item['price'];
         $stock = $item['stock'];
 
-        /* CHECK STOCK */
+        /*CHECK STOCK*/
 
         if($payment_status == "Paid"){
 
             if($quantity > $stock){
 
-                $error = "Not enough stock available!";
+            $error = "Not enough stock available!";
 
             }else{
 
-                /* DEDUCT STOCK */
+                /*DEDUCT STOCK*/
 
                 $newStock = $stock - $quantity;
 
